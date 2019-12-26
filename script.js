@@ -124,3 +124,82 @@ function changeTodo (position, newValue){
 				iceriden disari ile baglanti kurabilirsin ama disaridan iceri ile baglanti kuramazsin*/
         //Referance Error, school tanimlanmadigi icin hata verir
 
+
+//ver-3 object and functions,
+		/*object:birbirine bagli data ve fonksiyonlari grup haline getirmek icin kullaniriz.
+		ELimizde sistemi mac, ekran boyutu 15 inc, uretim yili 2011 olab bilgiler olsun. Bu bilgiler temelde bir bilgisayara ait. bu 			bilgileri birlikte 
+		kullanmak istedigimi js'e soyluyrum. tum bilgileri {} icine aliyorum.bu bilgiler virgullerle ayrilir. her bir data icin 		kullanilmasi gereken bir format vardir.Ozelligin adi: ozelligin degeri seklinde yazilir.tex de '' icinde yazilir.
+
+				{
+					operatingSystem:'mac',
+					screenSize:'15 inches',
+					purchaseYear:2011'
+				}
+		JS e uygun bu verileri degisiklik yapmak istiyorsam ver haline getirmeliyim.
+
+				var myComputer = {
+							operatingSystem:'mac',
+							screenSize:'15 inches',
+							purchaseYear:2011'
+						};
+		bu nesnenin sadece bir kismini almak istiyorsak myComputer.operatingSystem demen yeterli.*/
+
+
+var meryem={
+    name:'meryem',
+    sayName: function(){  //object icine function yazmak bir metod.
+        console.log(this.name);
+    }
+}
+
+meryem.sayName();
+//meryem
+var todoList = {                         //todos array on an object
+    todos: ['item 1', 'item 2', 'item 3']
+
+};
+//.........................
+
+var todoList = {                            //display todos method
+    todos: ['item 1', 'item 2', 'item 3'],  //property le rbirbirlerinden virgul ile ayrilir
+    displayTodos: function() {  	     //function lar medhod ise tekrar isim vermeye gerek yoktu. yandaki ve ustteki ornek gibi
+    console.log('My Todos', this.todos);
+},
+			/*todoList.addTodo('Plunker');
+			My todos ['item 1', 'item 2', 'item 3','plunker']
+			
+
+			var todoList = {//display todos method
+  			todos: ['Item 1', 'Item 2', 'Item 3'],
+   			displayTodos: function() {
+   			console.log('My Todos', this.todos)
+			},*/
+
+addTodo: function(todo) {      // add todos method
+        this.todos.push(todo);
+        this.displayTodos();      
+},
+
+                /* var todoList = {//display todos method
+                 todos: ['Item 1', 'Item 2', 'Item 3'],
+                 displayTodos: function() {
+                 console.log('My Todos', this.todos)*/
+
+changeTodo: function(position, newValue){
+   this.todos[position] = newValue;
+   this.displayTodos();
+},
+
+deleteTodo: function(position) {
+    this.todos.splice(position,1);
+     this.displayTodos();   
+     //console.log('My Todos', 'this.todos');
+     //My Todos ['item 1', 'item 2', 'item 3']
+ }
+
+};
+              /*todoList.displayTodos();
+              My todos: [ 'item 1', 'item 2', 'item 3' ]
+               todoList.deleteTodo(2);
+              My todos: [ 'item 1', 'item 2']*/
+
