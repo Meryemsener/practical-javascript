@@ -203,3 +203,45 @@ deleteTodo: function(position) {
                todoList.deleteTodo(2);
               My todos: [ 'item 1', 'item 2']*/
 
+version 4// javascript
+
+
+//ver-4 Booleans  (dogru mu yanlsi mi?)
+var todoList = {
+    todos: [],
+    displayTodos: function() {
+    console.log('My Todos', this.todos)
+},
+    addTodo: function(todoText) {  // add todos method,bir todo ile birden fazla data gostermeye calsimak
+        this.todos.push({
+            todoText: todoText, //ilk todoText property nin adi, ikincisi de function in parametresi,
+            complated: false
+        }) ;
+        this.displayTodos();      
+},
+
+changeTodo: function(position, todoText){  //bu method her bir todo nesnesindeki todoText propertysini degistirmeyi hedef almali
+   this.todos[position].todoText = todoText; //sadece ustteki todoText i degiistirmek hedef alinmistir
+   this.displayTodos();
+},
+
+deleteTodo: function(position){
+    this.todos.splice(position);
+     this.displayTodos();   
+     console.log('My Todos', 'this.todos');
+    
+ },
+
+			/*not: !true= false, 
+			var gordoenBoolean = false; //false
+			!gordenBoolean = true, bunu tekrar false yapmak icin
+			gordenBoolean = !gordonBoolean; // true false a dondu*/
+
+toggleCompleted: function(position) {
+    var todo = this.todos[position];  //burda bir noktaya odaklanmaya calisiyoruz
+    todo.completed = !todo.completed;  //true ise false, false ise true olacak
+    this.displayTodos();
+
+}
+};
+
