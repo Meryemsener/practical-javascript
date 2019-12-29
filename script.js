@@ -55,7 +55,7 @@ function sayHiTo(Person){
 
   console.log('hi', person);
   //hi Meryem
-}
+};
     
 //............
 var todos=['item 1', 'item 2', 'item 3']//display todos,function olusturmadan once ihtiyac olunan dizin
@@ -64,7 +64,7 @@ function displayTodos(){                //(fonksiyonun adi)
     console.log('My todos:' , todos);   
 }
 
-displayTodos()
+displayTodos();
 
 //My todos :['item 1', 'item 2', 'item 3'] 
 /*fonksiyon yazarken eklenen suslu parantezin arasini acmak icin shift+enter a basman gerekiyor. yoksa fonksiyon calismaz*/
@@ -135,7 +135,7 @@ function changeTodo (position, newValue){
 					screenSize:'15 inches',
 					purchaseYear:2011'
 				}
-		JS e uygun bu verileri degisiklik yapmak istiyorsam ver haline getirmeliyim.
+		JS e uygun bu verileri degisiklik yapmak istiyorsam var haline getirmeliyim.
 
 				var myComputer = {
 							operatingSystem:'mac',
@@ -253,27 +253,27 @@ console.log('hey');*/
 
 for (var i = 0; i < 3; i++) {//i=i+1=i++  ,
  console.log('hey');   //3 times 'hey'     
-}
+};
 
 
 //Looping over arrays = dizinler uzerinde dongu yapmak
 
 for (var i = 0; i < 3; i++){//i=i+1=i++  Looping over arrays, i=0 yerine sadece i yazincaconsole'da degerleri cikar. (0,1,2)
  console.log(i);     //console.log'da (0, 1,2) cikar
-}
+};
 
 //....
 var testArray= ['item 1', 'item 2', 'item 3'];
 testArray[0] //'item 1'
 for (var i = 0; i<3; i++){  //i=i+1=i++  
  console.log(testArray[i]);  // item 1, item 2, item 3,[] dizinin icerisindeki maddeleri cagirir
-}
+};
 
 //....................
 var testArray= ['item 1', 'item 2', 'item 3'];
 for (var i = 0; testArray.length; i++){//i=i+1=i++ burda i<3 yerine daha aktif olan madde sayisi kadar olan .length yaziyoruz 
  console.log(testArray[i]);// item 1, item 2, item 3
-},
+};
 
 
 var testArray= ['item 1', 'item 2', 'item 3'];
@@ -291,7 +291,7 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
    for (var i = 0; i <this.todos.length; i++){
    console.log( this.todos[i].todoText); //this.todos kismi dizinde kac madde oldugunu, .todoText maddelerin textini de verir
    }
-  },
+  };
 
 
   // displayTodos should tell you if .todos is empty
@@ -311,7 +311,7 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
    console.log( this.todos[i].todoText);
      }
     }
-  },
+  };
    
 
    // displayTodos should show .completed 
@@ -335,5 +335,31 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
       }
      }
     }
-  },
+  };
+	   
+ //Version 6 Thinking in code
+   // .toggleAll: If everything's true, make everything false togggle=gecis
+    
+   toggleAll:function(){
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+    for (var i = 0; i < totalTodos; i++) {
+     if(this.todos[i].comletede === true) {
+      completedTodos++;
+     }
+    }
+    if(completedTodos === totalTodos) {
+     for (var i =0; i< totalTodos; i++) {
+      this.todos[i].completed = false;
+      }
+     } else {                       //toggleAll: Otherwise, make everything true toggle= gecis
+      for (var i = 0; i< totalTodos; i++){
+      this.todos[i].completed = true;
+      }
+     }
+    this.displayTodos();
+    }
+   };
+	   
+	   
 
