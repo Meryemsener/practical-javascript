@@ -320,7 +320,9 @@ for (var i = 0; testArray.length; i++){//i=i+1=i++ burda i<3 yerine daha aktif o
 var testArray= ['item 1', 'item 2', 'item 3'];
 testArray.push('extra item');
 for (var i = 0; testArray.length; i++){   //i=i+1=i++  
- console.log(testArray[i]);           // item 1, item 2, item 3, extra item
+//  console.log(testArray[i]);      
+};
+	// item 1, item 2, item 3, extra item
 //...........................
 
 
