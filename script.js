@@ -23,7 +23,7 @@ todos[0];
 todos[1];
 //'item 2'
 
-tosoa[2];
+todos[2];
 //'item 3'
 todos[5];
 //undefinde
