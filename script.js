@@ -245,3 +245,95 @@ toggleCompleted: function(position) {
 }
 };
 
+//versiyon 5 Loops of logic //donguler:belli kodlari istedigimiz zaman istedigimiz sayida tekrar ettirmek
+
+/* for (inizalitation; condition; final-expression){initialization:baslatma,final-expression=
+console.log('hey');*/
+
+
+for (var i = 0; i < 3; i++) {//i=i+1=i++  ,
+ console.log('hey');   //3 times 'hey'     
+}
+
+
+//Looping over arrays = dizinler uzerinde dongu yapmak
+
+for (var i = 0; i < 3; i++){//i=i+1=i++  Looping over arrays, i=0 yerine sadece i yazincaconsole'da degerleri cikar. (0,1,2)
+ console.log(i);     //console.log'da (0, 1,2) cikar
+}
+
+//....
+var testArray= ['item 1', 'item 2', 'item 3'];
+testArray[0] //'item 1'
+for (var i = 0; i<3; i++){  //i=i+1=i++  
+ console.log(testArray[i]);  // item 1, item 2, item 3,[] dizinin icerisindeki maddeleri cagirir
+}
+
+//....................
+var testArray= ['item 1', 'item 2', 'item 3'];
+for (var i = 0; testArray.length; i++){//i=i+1=i++ burda i<3 yerine daha aktif olan madde sayisi kadar olan .length yaziyoruz 
+ console.log(testArray[i]);// item 1, item 2, item 3
+},
+
+
+var testArray= ['item 1', 'item 2', 'item 3'];
+testArray.push('extra item');
+for (var i = 0; testArray.length; i++){   //i=i+1=i++  
+ console.log(testArray[i]);           // item 1, item 2, item 3, extra item
+//...........................
+
+
+ //displayTodos should show .todoText
+ var todoList={
+  todos:[],
+  displayTodos: function () {
+   console.log('My Todos:');
+   for (var i = 0; i <this.todos.length; i++){
+   console.log( this.todos[i].todoText); //this.todos kismi dizinde kac madde oldugunu, .todoText maddelerin textini de verir
+   }
+  },
+
+
+  // displayTodos should tell you if .todos is empty
+  
+   var todoList={
+  todos:[],
+  displayTodos: function () {
+   console.log('My Todos:');
+   for (var i = 0; i <this.todos.length; i++){
+   console.log( this.todos[i].todoText);
+   }
+ if(this.todos.length === 0){            // if there are no todos
+  console.log('Your todo list is empty!');
+ }else {                
+  console.log('My Todos:');
+   for (var i = 0; i <this.todos.length; i++){
+   console.log( this.todos[i].todoText);
+     }
+    }
+  },
+   
+
+   // displayTodos should show .completed 
+     
+   var todoList={
+  todos:[],
+  displayTodos: function () {
+   console.log('My Todos:');
+   for (var i = 0; i <this.todos.length; i++) {
+   console.log( this.todos[i].todoText);
+   }
+ if (this.todos.length === 0){
+  console.log('Your todo list is empty!');
+ }else {
+  console.log('My Todos:');
+   for (var i = 0; i <this.todos.length; i++) {
+    if (this.todos[i].completed === true) {
+     console.log('(x)', this.todos[i].todoText);
+    } else {
+     console.log('()', this.todos[i].todoText);
+      }
+     }
+    }
+  },
+
