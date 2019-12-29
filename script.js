@@ -431,12 +431,12 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
      var toggleAllButton = document.getElementById('toggleAllButton');
 
      displayTodosButton.addEventListener('click', function(){
-     todosList.displayTodos();
+     todoList.displayTodos();
      });
        
        toggleAllButton.addEventListener('click', function(){  //addEventListener=.... yapmak istedigimde ...olsun
                                                               //tikladiginda displayTodos calissin
-       todosList.toggleAll();
+       todoList.toggleAll();
        });
 
 	   
