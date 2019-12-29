@@ -332,7 +332,7 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
    for (var i = 0; i <this.todos.length; i++){
    console.log( this.todos[i].todoText); //this.todos kismi dizinde kac madde oldugunu, .todoText maddelerin textini de verir
    }
-  };
+  },
 
 
   // displayTodos should tell you if .todos is empty
