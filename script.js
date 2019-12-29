@@ -115,12 +115,12 @@ function changeTodo (position, newValue){
      }
         sayName;//Meryem
 
-     function sayName (){
-        var school = 'HAckYourFuture';
-        console.log(myName);
-        }
-        console.log(school);   /*bu console.log'un calismama nedeni consolun disaridan cagirmasi. console.log
-				iceriden disari ile baglanti kurabilirsin ama disaridan iceri ile baglanti kuramazsin*/
+//      function sayName (){
+//         var school = 'HackYourFuture';
+//         console.log(myName);
+//         }
+//         console.log(school);   //bu console.log'un calismama nedeni consolun disaridan cagirmasi. console.log
+				//iceriden disari ile baglanti kurabilirsin ama disaridan iceri ile baglanti kuramazsin
         //Referance Error, school tanimlanmadigi icin hata verir
 
 
