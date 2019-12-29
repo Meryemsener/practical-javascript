@@ -204,7 +204,7 @@ deleteTodo: function(position) {
                todoList.deleteTodo(2);
               My todos: [ 'item 1', 'item 2']*/
 
-version 4// javascript
+//version 4// javascript
 
 
 //ver-4 Booleans  (dogru mu yanlsi mi?)
