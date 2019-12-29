@@ -352,7 +352,7 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
    console.log( this.todos[i].todoText);
      }
     }
-  };
+  }
    
 
    // displayTodos should show .completed 
