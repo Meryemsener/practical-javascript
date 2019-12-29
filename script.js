@@ -337,7 +337,7 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
 
   // displayTodos should tell you if .todos is empty
   
-   var todoList = {
+  var todoList = {
   todos:[],
   displayTodos: function () {
    console.log('My Todos:');
