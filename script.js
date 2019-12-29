@@ -360,6 +360,23 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
     this.displayTodos();
     }
    };
+
+  //HTML sayfa hakkinda bilgi verir, DOM ise browsera bu bilgiyi nasil olmasi gerektigini anlatir
+
+//Versiyon 7 Clicking “Display todos” should run todoList.displayTodos 
+   
+     var displayTodosButton = document.getElementById('displayTodosButton');
+     var toggleAllButton = document.getElementById('toggleAllButton');
+
+     displayTodosButton.addEventListener('click', function(){
+     todosList.displayTodos();
+     });
+       
+       toggleAllButton.addEventListener('click', function(){  //addEventListener=.... yapmak istedigimde ...olsun
+                                                              //tikladiginda displayTodos calissin
+       todosList.toggleAll();
+       });
+
 	   
 	   
 
