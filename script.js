@@ -1,21 +1,20 @@
 /*ver-1 arrays*/
-var todos =['item 1', 'item 2', 'item 3']//store todo
-todos;
+var todos =['item 1', 'item 2', 'item 3'];//store todo
 
-console.log(todos);
+//console.log(todos);
 //['item 1', 'item 2', 'item 3']
 //............................................
 
 
 var todos =['item 1', 'item 2', 'item 3']
 todos.push('item 4'); //display todo
-console.log(todos);
+//console.log(todos);
 //['item 1', 'item 2', 'item 3','items 4']
 
 //............................
 var todos =['item 1', 'item 2', 'item 3','items 4']
  todos.push('item 5');//add the new todo
- console.log(todos);
+ //console.log(todos);
 //['item 1', 'item 2', 'item 3','items 4','item 5']
 
 todos[0];
@@ -30,12 +29,12 @@ todos[5];
 //undefinde
 //........................................
 var todos =['item 1', 'item 2', 'item 3','items 4']
-todos[0] ='item 1 updated'//change a todo
+todos[0] ='item 1 updated';//change a todo
 todos;
 // new todos is ['item 1 updated', 'item 2', 'item 3','items 4','item 5']
 
 //......................................
-var todos= ['item 1 updated', 'item 2', 'item 3','items 4','item 5']
+var todos= ['item 1 updated', 'item 2', 'item 3','items 4','item 5'];
 todos.splice(0,1);//delete a todo 0= silmeye hangisinden baslayacak, 1= 0 dahil kac tane silecek
 //new todos is['item 2', 'item 3','items 4','item 5']
 todos.splice(2,1);
@@ -53,12 +52,12 @@ todos.splice(2,1);
 sayHiTo('Meryem');//person= meryem
 function sayHiTo(Person){
 
-  console.log('hi', person);
+  //console.log('hi', person);
   //hi Meryem
 };
     
 //............
-var todos=['item 1', 'item 2', 'item 3']//display todos,function olusturmadan once ihtiyac olunan dizin
+var todos=['item 1', 'item 2', 'item 3'];//display todos,function olusturmadan once ihtiyac olunan dizin
  
 function displayTodos(){                //(fonksiyonun adi)
     console.log('My todos:' , todos);   
@@ -77,7 +76,7 @@ function addTodo(todo){       //add todo
 addTodo();// addTodo da eklemek istedigin seyi yazabilirsin,
 todos;//['item 1', 'item 2', 'item 3', 'todo']
 
-displayTodos()    //parantez bos kalmak zorunda
+displayTodos();    //parantez bos kalmak zorunda
 ///My todos :['item 1', 'item 2', 'item 3', 'todo']
 //................
 
@@ -155,16 +154,18 @@ var meryem={
 meryem.sayName();
 //meryem
 var todoList = {                         //todos array on an object
-    todos: ['item 1', 'item 2', 'item 3']
-
+    todos: ['item 1', 'item 2', 'item 3'],
+   displayTodos: function() { 
+   console.log('My Todos', this.todos);  
+   }
 };
+   todoList.displayTodos();
 //.........................
 
 var todoList = {                            //display todos method
     todos: ['item 1', 'item 2', 'item 3'],  //property le rbirbirlerinden virgul ile ayrilir
-    displayTodos: function() {  	     //function lar medhod ise tekrar isim vermeye gerek yoktu. yandaki ve ustteki ornek gibi
-    console.log('My Todos', this.todos);
-},
+    					     //function lar medhod ise tekrar isim vermeye gerek yoktu. yandaki ve ustteki ornek gibi
+	
 			/*todoList.addTodo('Plunker');
 			My todos ['item 1', 'item 2', 'item 3','plunker']
 			
@@ -210,7 +211,9 @@ version 4// javascript
 var todoList = {
     todos: [],
     displayTodos: function() {
-    console.log('My Todos', this.todos)
+    console.log('My Todos', this.todos);
+   for (var i = 0; i < this.todos.length; i++){
+   }
 },
     addTodo: function(todoText) {  // add todos method,bir todo ile birden fazla data gostermeye calsimak
         this.todos.push({
@@ -226,9 +229,9 @@ changeTodo: function(position, todoText){  //bu method her bir todo nesnesindeki
 },
 
 deleteTodo: function(position){
-    this.todos.splice(position);
+    this.todos.splice(position,1);
      this.displayTodos();   
-     console.log('My Todos', 'this.todos');
+     //console.log('My Todos', 'this.todos');
     
  },
 
@@ -249,11 +252,49 @@ toggleCompleted: function(position) {
 
 /* for (inizalitation; condition; final-expression){initialization:baslatma,final-expression=
 console.log('hey');*/
-
-
-for (var i = 0; i < 3; i++) {//i=i+1=i++  ,
- console.log('hey');   //3 times 'hey'     
+var todoList = {
+todos: [],
+displayTodos: function(){
+	if (this.todos.length === 0) {
+      console.log("your todo list is empty");
+    } else {
+      console.log("My todos:");
+      for (var i = 0; i < this.todos.length; i++) {
+        if (this.todos[i].completed === true) {
+          console.log("(x)", this.todos[i].todoText);
+        } else {
+          console.log("( )", this.todos[i].todoText);
+        }
+      }
+    }
+  },
+	addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(position, todoText) {
+    //this.todos[position] = newValue;
+    this.todos[position].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodo: function(position) {
+    todos.splice(position, 1);
+    displayTodos();
+  },
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  }
 };
+	
+
+// for (var i = 0; i < 3; i++) {//i=i+1=i++  ,
+//  console.log('hey');   //3 times 'hey'     
+// };
 
 
 //Looping over arrays = dizinler uzerinde dongu yapmak
@@ -335,11 +376,30 @@ for (var i = 0; testArray.length; i++){   //i=i+1=i++
       }
      }
     }
-  };
+  },
 	   
  //Version 6 Thinking in code
    // .toggleAll: If everything's true, make everything false togggle=gecis
-    
+    addTodo: function(todoText) {
+    this.todos.push({
+      todoText: todoText,
+      completed: false
+    });
+    this.displayTodos();
+  },
+  changeTodo: function(position, todoText) {
+    this.todos[position].todoText = todoText;
+    this.displayTodos();
+  },
+  deleteTodo: function(position) {
+    this.todos.splice(position, 1);
+    this.displayTodos();
+  },
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  },
    toggleAll:function(){
     var totalTodos = this.todos.length;
     var completedTodos = 0;
